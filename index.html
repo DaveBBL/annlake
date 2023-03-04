@@ -15,31 +15,47 @@
       src="https://kit.fontawesome.com/21b4c1cb9d.js"
       crossorigin="anonymous"
     ></script>
+
     <title>Ann Lake Campground</title>
   </head>
-  <body class="bg-dark">
+  <body class="bg-sand">
     <!-- Hero Banner -->
     <header>
-      <div class="bg-success rounded-lg m-1">
+      <div class="rounded-lg m-1">
         <div class="container">
           <div class="row">
-            <div class="col-sm-6">
-              <img
-                class="img-fluid m-1"
-                src="img/logo.png"
-                alt="Ann Lake Campground Logo"
-                width="180"
-              />
-              <p class="lead">
-                Get away from it all, or bring it all with you.
-              </p>
-            </div>
-            <div class="col-sm-6">
+            <div class="col-sm-5">
               <img
                 class="img-fluid"
                 src="img/sand_dunes_trail.jpg"
-                alt="A sandy trail though the pines"
-                width="260"
+                alt="A sandy trail through the pines"
+                height="250"
+              />
+            </div>
+            <div class="col-sm-2">
+              <div class="row">
+                <div class="col-sm-12">
+                  <img
+                    class="img-fluid my-2"
+                    src="img/logo.png"
+                    alt="Ann Lake Campground Logo"
+                    width="180"
+                  />
+                </div>
+                <div class="row">
+                  <div class="col-sm-12">
+                    <p class="lead text-start">Get away from it all.</p>
+                    <p class="lead text-end">Bring it all with you.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-5">
+              <img
+                class="img-fluid"
+                src="img/ann_lake_fall.png"
+                alt="Fall trees and lake from an old fire tower"
+                height="250"
               />
             </div>
           </div>
@@ -50,14 +66,6 @@
     <!-- NavBar -->
     <nav class="navbar navbar-expand-sm navbar-dark bg-success sticky-top m-1">
       <div class="container">
-        <a class="navbar-brand" href="#">
-          <img
-            src="img/logo.png"
-            alt="Avatar Logo"
-            style="width: 50px"
-            class="rounded-pill"
-          />
-        </a>
         <button
           class="navbar-toggler"
           type="button"
@@ -66,35 +74,39 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="nucampNavbar">
+        <div class="collapse navbar-collapse" id="annlakeNavbar">
           <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link active" href=""
+            <li class="nav-item active">
+              <a class="nav-link" href="#"
                 ><i class="fa fa-home fa-lg"></i> Home</a
               >
             </li>
+
             <li class="nav-item">
-              <a class="nav-link" href="aboutus.html"
+              <a class="nav-link" href="#aboutus"
                 ><i class="fa fa-info fa-lg"></i> About</a
               >
             </li>
+
             <li class="nav-item">
               <a class="nav-link" href=""
-                ><i class="fa fa-list fa-lg"></i> Sites</a
+                ><i class="fa fa-list fa-lg"></i> Reserve</a
               >
             </li>
+
             <li class="nav-item">
-              <a class="nav-link" href="contactus.html"
+              <a class="nav-link" href="#contact"
                 ><i class="fa fa-address-card fa-lg"></i> Contact</a
               >
             </li>
           </ul>
           <span class="navbar-text ml-auto">
             <a
+              id="loginButton"
               class="nav-link"
               role="button"
-              data-toggle="modal"
-              data-target="#loginModal"
+              data-bs-toggle="modal"
+              data-bs-target="#loginModal"
             >
               <i class="fa fa-sign-in"></i> Login
             </a>
@@ -103,63 +115,192 @@
       </div>
     </nav>
 
-    <!-- Main Cards -->
-    <div class="container">
-      <div class="row p-3">
-        <div class="col-sm-4">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Rustic Camping</h5>
-              <p class="card-text">
-                Live on the edge with our exclusive water, sewer and
-                electric-free sites
-              </p>
-            </div>
+    <!-- Modal Log-in -->
+    <div class="modal fade" id="loginModal" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title">Login</h3>
+            <button class="close" type="button" data-dismiss="modal">
+              &times;
+            </button>
           </div>
-        </div>
-        <div class="col-sm-4">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Watersports and Hiking</h5>
-              <p class="card-text">
-                Swimming, canoeing, kayaking, snorkeling and more
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-4">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Unique Experiences</h5>
-              <p class="card-text">Really Creative Stuff</p>
+          <div class="modal-body">
+            <div class="container-fluid">
+              <form>
+                <div class="form-row">
+                  <div class="form-group col-12">
+                    <label for="loginEmail" class="sr-only"
+                      >Email Address</label
+                    >
+                    <input
+                      type="email"
+                      class="form-control form-control-sm"
+                      id="loginEmail"
+                      placeholder="Enter Email"
+                    />
+                  </div>
+                  <div class="form-group col-12">
+                    <label for="loginPassword" class="sr-only">Password</label>
+                    <input
+                      type="password"
+                      class="form-control form-control-sm"
+                      id="loginPassword"
+                      placeholder="Password"
+                    />
+                  </div>
+                  <div class="col">
+                    <div class="form-check">
+                      <input type="checkbox" class="form-check-input" />
+                      <label for="" class="form-check-label">
+                        Remember Me</label
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="form-row ml-auto">
+                  <button
+                    type="button"
+                    class="btn btn-secondary btn-sm"
+                    data-bs-dismiss="modal"
+                  >
+                    Cancel
+                  </button>
+                  <button type="submit" class="btn btn-primary btn-sm ml-1">
+                    Sign In
+                  </button>
+                </div>
+              </form>
             </div>
           </div>
         </div>
       </div>
-      <div class="row p-3 bg-light">
-        <ul>
-          <li>Arts camps</li>
-          <li>Coding Camps</li>
-          <li>VR experiences</li>
-          <li>VR gaming</li>
-          <li>Cosplay</li>
-          <li>Cinema w/headphones</li>
-          <li>Outdoor Theatre</li>
-          <li>Horses</li>
-          <li>Fishing</li>
-          <li>Canoes and Kayaks</li>
-          <li>Swimming with the Sunfish</li>
-          <li>Free Horsefly Zappers</li>
-          <li>Bug Trap Rentals</li>
-          <li>Whatever you can come up with!</li>
-          <li>Superfast camp-wide free wifi</li>
-        </ul>
+    </div>
+
+    <!-- Ticker -->
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="ticker-wrap">
+            <div class="ticker">
+              <div class="ticker__item">
+                Camping - Fishing - Swimming - Canoeing - Kayaking - Snorkeling
+                - Communing with Sunfish - Hiking
+              </div>
+              <div class="ticker__item">
+                Free Wifi - Private Group Cinema - Shakespeare in the Pines
+              </div>
+              <div class="ticker__item">
+                Arts Camp - Coding Camp - VR Gaming - VR Tours - VR Swordplay
+                Competitions
+              </div>
+              <div class="ticker__item">
+                Cosplay - Medieval Tournaments - Logging Contests
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Cards -->
+    <div class="container">
+      <div class="row p-3">
+        <div class="col-sm-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title text-center text-warning">
+                Rustic Camping
+              </h5>
+              <div class="card-text">
+                <p>
+                  Live on the edge while you get back to basics with our
+                  exclusive water, sewer and electric-free sites.
+                </p>
+                <p>
+                  Propane-powered bug trap rentals are available. Or you can
+                  sign out a free bug-zapper tennis racquet (batteries not
+                  included).
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title text-center text-primary">
+                Watersports and Hiking
+              </h5>
+              <p class="card-text">
+                Fishing, swimming, canoeing, kayaking, snorkeling and more.
+              </p>
+              <p>
+                If your kids can sit quietly on the sand of our super shallow
+                swimming area, they can experience schools of sunfish
+                surrounding them and, if they are very, very still, nibbling on
+                their exposed flesh. Don't worry! They don't really have teeth
+                to speak of, and most children love it. Adults, too!
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title text-center text-danger">
+                Unique Experiences
+              </h5>
+              <p class="card-text">
+                Our group campsites can accommodate and facilitate a wide
+                variety of fun and creative activities.
+              </p>
+              <p>
+                Our super-fast camp-wide WiFi will enable some of your wildest
+                fantasies to be realized in the actual wilds.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- About Us -->
+    <div class="container">
+      <div class="row p-2 bg-info">
+        <div class="col-sm-12" id="aboutus">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title text-center text-info">About Us</h5>
+              <p class="card-text">
+                Thanks to generous endowments from Big Oil, Big Pharma, and Big
+                Food, we have practically unlimited resources with which to
+                provide our community with a rich variety of unforgettable
+                experiences.
+              </p>
+              <p>
+                Purchased from the Minnesota Department of Natural Resources in
+                2000, the campground, like the rest of the country, underwent a
+                dramatic change thoughout the Coronavirus pandemic, only in our
+                case, it was a very positive one.
+              </p>
+              <p>
+                The roads through the campground loops were paved. High-speed
+                WiFi was installed throughout the property, even on the trail
+                system. The beach area is now patrolled 24/7 to prevent
+                fishermen casting their hooks in the swimming area and people
+                letting their dogs run loose on the beach, as was rampant in the
+                past.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
     <!-- Footer -->
     <footer class="site-footer">
-      <div class="container">
+      <div id="contact" class="container">
         <div class="row bg-light">
           <!-- Phone -->
           <div class="col-sm-4 text-center">
@@ -208,12 +349,16 @@
         <!-- Site Info -->
         <div class="row bg-light">
           <div class="col-12 text-center">
-            <a href="admin-login.html" class="btn btn-link" role="button">Admin Login</a>
+            <p>&copy; 2023 The Ann Lake Campground Foundation</p>
+            <a href="admin-login.html" class="btn btn-link" role="button"
+              >Admin Login</a
+            >
           </div>
         </div>
       </div>
     </footer>
 
+    <script src="js/scripts.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
